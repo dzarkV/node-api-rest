@@ -13,6 +13,8 @@ mongoose.connect(process.env.MONGO_CONN_STR)
 
 // Morgan to allow api log
 app.use(morgan('dev'));
+// Become uploads static folder
+app.use('/uploads', express.static('uploads'));
 // Body parser to allow receive json body and urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
